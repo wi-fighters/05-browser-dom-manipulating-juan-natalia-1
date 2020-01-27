@@ -19,7 +19,7 @@
 }
 
 li {
-  width: 15rem;
+  max-width: 15.7rem;
   margin: 0.2rem;
   border: 1px solid #ccc;
   list-style-type: none;
@@ -54,4 +54,12 @@ h2 {
   background-color: rgb(228, 225, 225);
   text-align: end;
   border: 1px solid rgb(185, 184, 184);
+}
+
+.read {
+  background-color: green;
+}
+
+.to-read {
+  background-color: gray;
 }
