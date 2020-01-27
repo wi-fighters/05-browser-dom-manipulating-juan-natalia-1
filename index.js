@@ -28,29 +28,37 @@
 
 
   // access the ul element
-  const ul = document.querySelector(".book-list");
+  const ul = document.querySelector("ul");
 
-  // traverse the book array
+  // traverse the books array
   for (let i = 0; i < books.length; i++) {
     console.log("books:", books[i]);
 
-    // const txt = document.createTextNode(books[i].toUpperCase() + books.substring(1).toLowerCase());
-    // const txt = document.createTextNode(books[i].title);
-    // const txt = document.createTextNode("hi");
-    // li.prepend(txt);
-
-    // create li elements
-    let li = document.createElement("li");
-
-    li.innerHTML = '<img src="' + books[i].img + '" width="300">';
-    li.innerHTML += '<h2>' + books[i].title + '</h2>';
-    li.innerHTML += '<p>' + books[i].author + '</p>';
-    li.innerHTML += '';
-
-
-    ul.appendChild(li);
+    // rewrite the authors with reversed names
+    books[i].author = books[i].author.split(" ").reverse().join(", ");
   }
 
+  console.log(books);
 
+  // sort authors by the last name
+  let sortedBooks = books.sort((a, b) => {
+    // compare the first letters of two books to see which one comes first alphabetically
+    if (a.author.charAt(0) > b.author.charAt(0)) {
+      return 1;
+    } else {
+      return -1;
+    }
+  })
+
+  sortedBooks.map(book => {
+    let li = document.createElement("li");
+
+    li.innerHTML = '<img src="' + book.img + '" width="350" height="250">';
+    li.innerHTML += '<h2>' + book.title + '</h2>';
+    li.innerHTML += '<p class="author">' + book.author + '</p>';
+    li.innerHTML += book.alreadyRead ? '<div class="btns"><span style="background-color: green;">read</span></div>' : '<div class="btns"><span style="background-color: gray;">to read</span></div>';
+
+    ul.appendChild(li);
+  });
 
 })();
