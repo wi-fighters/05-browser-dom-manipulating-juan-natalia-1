@@ -1,20 +1,57 @@
 .book-list {
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: space-around;
-  }
-  
-  .book {
-    width: 12rem;
-  }
-  
-  .status {
-    font-style: italic;
-  }
-  
-  .book-cover {
-    max-height: 15rem;
-    object-fit: cover;
-    border: 0.2rem solid black;
-  }
-  
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+}
+
+.book {
+  width: 12rem;
+}
+
+.status {
+  font-style: italic;
+}
+
+.book-cover {
+  max-height: 15rem;
+  object-fit: cover;
+  border: 0.2rem solid black;
+}
+
+li {
+  width: 15rem;
+  margin: 0.2rem;
+  border: 1px solid #ccc;
+  list-style-type: none;
+}
+
+img {
+  width: 100%;
+  border: 1px solid #000;
+}
+
+h2 {
+  font-size: 1.5em;
+  height: 80px;
+  padding: 1rem 0.5rem;
+}
+
+.author {
+  height: 100px;
+  padding: 0.5rem;
+}
+
+.btns span {
+  padding: 0.3rem 1rem;
+  border-radius: 1rem;
+  cursor: pointer;
+  color: #fff;
+  text-transform: capitalize;
+}
+
+.btns {
+  padding: 1rem;
+  background-color: rgb(228, 225, 225);
+  text-align: end;
+  border: 1px solid rgb(185, 184, 184);
+}
